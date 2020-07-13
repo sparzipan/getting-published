@@ -26,7 +26,8 @@ main h1,
 main h2,
 .intro p,
 .pdf-download,
-nav ul {
+nav ul,
+.final-comment {
   text-align: center;
 }
 
@@ -37,11 +38,19 @@ nav ul {
 nav {
   grid-area: nav;
   background: grey;
+  display: flex;
+  justify-content: space-between;
 }
 
 nav ul {
   list-style-type: none;
-  padding-left: 0;
+  padding: 0;
+  margin: .25em;
+}
+
+nav li {
+  padding: .25em;
+  margin: .5em;
 }
 
 main {
@@ -59,17 +68,20 @@ main h1 {
   color: purple;
 }
 
-main h2 {
+main h2,
+aside h2 {
   color: olivedrab;
 }
 
 h1,
 h2,
-h3 {
+h3,
+nav {
   font-family: 'Cinzel', serif;
 }
 
-.intro p {
+.intro p,
+blockquote {
   font-size: .85em;
 }
 
@@ -86,14 +98,41 @@ main li {
   padding: .25em;
 }
 
-main a {
+blockquote,
+.answer {
+  font-style: italic;
+}
+
+.question,
+.final-comment {
+  font-weight: bold;
+}
+
+nav a {
+  color: purple;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: white;
+}
+
+.nav-heading {
+  color: white;
+  font-weight: bold;
+}
+
+main a,
+aside a {
   color: ;
   font-weight: bold;
   color: green;
   text-decoration: none;
 }
 
-main a:hover {
+main a:hover,
+aside a:hover {
   color: grey;
   padding: .25em;
 }
@@ -109,6 +148,9 @@ aside {
   background: grey;
 }
 
+/* ==============================
+    MEDIA QUERIES
+===============================*/
 
 @media (min-width: 768px) {
   .wrapper {
@@ -120,7 +162,14 @@ aside {
       "aside main";
   }
 
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: .25em 3em;
+  }
+
   nav li {
+    padding: 1em;
     display: inline-block;
   }
 

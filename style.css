@@ -1,0 +1,131 @@
+body {
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+.wrapper {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  grid-template-areas:
+    "header"
+    "nav"
+    "aside"
+    "main";
+  grid-gap: 1em;
+}
+
+header {
+  grid-area: header;
+  text-transform: uppercase;
+  background: purple;
+}
+
+header,
+main h1,
+main h2,
+.intro p,
+.pdf-download,
+nav ul {
+  text-align: center;
+}
+
+.title {}
+
+.subtitle {}
+
+nav {
+  grid-area: nav;
+  background: grey;
+}
+
+nav ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+main {
+  grid-area: main;
+}
+
+#go-it-alone,
+#go-traditional {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 1em;
+}
+
+main h1 {
+  color: purple;
+}
+
+main h2 {
+  color: olivedrab;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Cinzel', serif;
+}
+
+.intro p {
+  font-size: .85em;
+}
+
+main,
+aside {
+  margin: 1em;
+  padding: 1em;
+  border: 1px solid black;
+}
+
+section {}
+
+main li {
+  padding: .25em;
+}
+
+main a {
+  color: ;
+  font-weight: bold;
+  color: green;
+  text-decoration: none;
+}
+
+main a:hover {
+  color: grey;
+  padding: .25em;
+}
+
+aside {
+  grid-area: aside;
+}
+
+.pdf-download {
+  padding: 1em;
+  margin: 1em;
+  border: 1px dashed black;
+  background: grey;
+}
+
+
+@media (min-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr 2fr;
+    grid-auto-rows: auto auto;
+    grid-template-areas:
+      "header header"
+      "nav nav"
+      "aside main";
+  }
+
+  nav li {
+    display: inline-block;
+  }
+
+  main a:hover {
+    color: grey;
+    padding: 0;
+  }
+}

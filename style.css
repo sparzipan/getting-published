@@ -9,12 +9,13 @@ body {
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 200px auto auto;
+  grid-template-rows: 200px auto auto auto auto;
   grid-template-areas:
     "header"
     "nav"
-    "aside"
+    "downloads"
     "main"
+    "resources"
     "footer";
 }
 
@@ -40,7 +41,8 @@ aside h2,
 nav ul,
 .final-comment,
 .image,
-footer {
+footer,
+.divider-img {
   text-align: center;
 }
 
@@ -50,6 +52,8 @@ nav {
   display: flex;
   justify-content: space-between;
   box-shadow: 2px 2px 4px black;
+  position: sticky;
+  top: 0;
 }
 
 nav ul {
@@ -86,7 +90,8 @@ aside h2 {
 h1,
 h2,
 h3,
-nav {
+nav,
+#myBtn {
   font-family: 'Cinzel', serif;
 }
 
@@ -148,31 +153,52 @@ aside a:hover {
   padding: .25em;
 }
 
-aside {
-  grid-area: aside;
+.downloads {
+  grid-area: downloads;
+}
+
+.resources {
+  grid-area: resources;
+}
+
+i {
+  color: rebeccapurple;
+  padding-right: .5em;
 }
 
 .pdf-download {
   padding: 1em;
   margin: 1em;
   border: 1px dashed black;
-  background: grey;
+  background: thistle;
 }
+
+.divider {
+  max-width: 200px;
+  height: auto;
+}
+
+.alone-image,
+.traditional-image {
+  border: 5px double grey;
+}
+
 
 #myBtn {
   display: none; /* Hidden by default */
   position: fixed; /* Fixed/sticky position */
-  bottom: 20px; /* Place the button at the bottom of the page */
-  right: 30px; /* Place the button 30px from the right */
+  bottom: 1em; /* Place the button at the bottom of the page */
+  right: 1em; /* Place the button 30px from the right */
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
-  background-color: red; /* Set a background color */
+  background-color: rebeccapurple; /* Set a background color */
   color: white; /* Text color */
+  text-shadow: 1px 1px 2px black;
   cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 15px; /* Some padding */
-  border-radius: 10px; /* Rounded corners */
-  font-size: 18px; /* Increase font size */
+  padding: .5em; /* Some padding */
+  border-radius: .4em; /* Rounded corners */
+  font-size: 1em; /* Increase font size */
 }
 
 #myBtn:hover {
@@ -192,11 +218,12 @@ footer {
 @media (min-width: 768px) {
   .wrapper {
     grid-template-columns: 1fr 2fr;
-    grid-auto-rows: auto auto auto auto;
+    grid-auto-rows: auto auto 300px auto;
     grid-template-areas:
       "header header"
       "nav nav"
-      "aside main"
+      "downloads downloads"
+      "resources main"
       "footer footer";
   }
 
@@ -207,11 +234,12 @@ footer {
   }
 
   nav li {
-    padding: 1em;
+    padding: 1em .2em;
     display: inline-block;
   }
 
-  main a:hover {
+  main a:hover,
+  aside a:hover {
     color: grey;
     padding: 0;
   }

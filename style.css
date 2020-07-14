@@ -1,35 +1,12 @@
+/* ================================
+  BASE STYLES
+=================================*/
+
 body {
   font-family: 'Nanum Gothic', sans-serif;
   background-image: url("img/body-bg.jpg");
   background-repeat: repeat;
   background-size: auto;
-}
-
-.wrapper {
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 200px auto auto auto auto;
-  grid-template-areas:
-    "header"
-    "nav"
-    "downloads"
-    "main"
-    "resources"
-    "footer";
-}
-
-header {
-  grid-area: header;
-  text-transform: uppercase;
-  background: linear-gradient(rebeccapurple, transparent),
-  url("img/header-bg.jpg") no-repeat center;
-  background-size: cover;
-  color: white;
-  text-shadow: 1px 1px 2px black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 header,
@@ -45,6 +22,137 @@ footer,
 .divider-img {
   text-align: center;
 }
+
+main,
+aside {
+  margin: 1em;
+  padding: 1em;
+  border: 1px solid black;
+  background: white;
+}
+
+/* ================================
+  HEADINGS, TEXT STYLES
+=================================*/
+
+/* HEADINGS */
+main h1 {
+  color: purple;
+}
+
+main h2,
+aside h2 {
+  color: olivedrab;
+}
+
+#go-it-alone,
+#go-traditional {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 1em;
+}
+
+h1,
+h2,
+h3,
+nav,
+#myBtn {
+  font-family: 'Cinzel', serif;
+}
+
+/* BULLETED LISTS */
+main li {
+  padding: .25em;
+}
+
+/* INTERVIEW STYLES */
+blockquote,
+.answer {
+  font-style: italic;
+}
+
+.question,
+.final-comment {
+  font-weight: bold;
+}
+
+/* GENERAL */
+.intro p,
+blockquote {
+  font-size: .85em;
+}
+
+.nav-heading,
+footer {
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  font-weight: bold;
+}
+
+/* ================================
+  LINKS
+=================================*/
+
+main a,
+aside a {
+  font-weight: bold;
+  color: green;
+  text-decoration: none;
+}
+
+main a:hover,
+aside a:hover {
+  color: grey;
+  padding: .25em;
+}
+
+/* ================================
+  LAYOUT
+=================================*/
+.wrapper {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 200px auto auto auto auto;
+  grid-template-areas:
+    "header"
+    "nav"
+    "downloads"
+    "main"
+    "resources"
+    "footer";
+}
+
+/* MAIN CONTENT */
+main {
+  grid-area: main;
+}
+
+/* RESOURCES ASIDE */
+.resources {
+  grid-area: resources;
+}
+
+/* ================================
+  HEADER
+=================================*/
+
+header {
+  grid-area: header;
+  text-transform: uppercase;
+  background: linear-gradient(rebeccapurple, transparent),
+  url("img/header-bg.jpg") no-repeat center;
+  background-size: cover;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ================================
+  NAV BAR
+=================================*/
 
 nav {
   grid-area: nav;
@@ -67,61 +175,6 @@ nav li {
   margin: .5em;
 }
 
-main {
-  grid-area: main;
-}
-
-#go-it-alone,
-#go-traditional {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  padding: 1em;
-}
-
-main h1 {
-  color: purple;
-}
-
-main h2,
-aside h2 {
-  color: olivedrab;
-}
-
-h1,
-h2,
-h3,
-nav,
-#myBtn {
-  font-family: 'Cinzel', serif;
-}
-
-.intro p,
-blockquote {
-  font-size: .85em;
-}
-
-main,
-aside {
-  margin: 1em;
-  padding: 1em;
-  border: 1px solid black;
-  background: white;
-}
-
-main li {
-  padding: .25em;
-}
-
-blockquote,
-.answer {
-  font-style: italic;
-}
-
-.question,
-.final-comment {
-  font-weight: bold;
-}
-
 nav a {
   color: purple;
   text-decoration: none;
@@ -132,38 +185,12 @@ nav a:hover {
   color: white;
 }
 
-.nav-heading,
-footer {
-  color: white;
-  text-shadow: 1px 1px 2px black;
-  font-weight: bold;
-}
-
-main a,
-aside a {
-  color: ;
-  font-weight: bold;
-  color: green;
-  text-decoration: none;
-}
-
-main a:hover,
-aside a:hover {
-  color: grey;
-  padding: .25em;
-}
+/* ================================
+  DOWNLOADS ASIDE
+=================================*/
 
 .downloads {
   grid-area: downloads;
-}
-
-.resources {
-  grid-area: resources;
-}
-
-i {
-  color: rebeccapurple;
-  padding-right: .5em;
 }
 
 .pdf-download {
@@ -172,6 +199,16 @@ i {
   border: 1px dashed black;
   background: thistle;
 }
+
+i {
+  color: rebeccapurple;
+  padding-right: .5em;
+}
+
+
+/* ================================
+  IMAGES
+=================================*/
 
 .divider {
   max-width: 200px;
@@ -183,27 +220,34 @@ i {
   border: 5px double grey;
 }
 
+/* ================================
+  BACK TO TOP BUTTON
+=================================*/
 
 #myBtn {
-  display: none; /* Hidden by default */
-  position: fixed; /* Fixed/sticky position */
-  bottom: 1em; /* Place the button at the bottom of the page */
-  right: 1em; /* Place the button 30px from the right */
-  z-index: 99; /* Make sure it does not overlap */
-  border: none; /* Remove borders */
-  outline: none; /* Remove outline */
-  background-color: rebeccapurple; /* Set a background color */
-  color: white; /* Text color */
+  display: none;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: rebeccapurple;
+  color: white;
   text-shadow: 1px 1px 2px black;
-  cursor: pointer; /* Add a mouse pointer on hover */
-  padding: .5em; /* Some padding */
-  border-radius: .4em; /* Rounded corners */
-  font-size: 1em; /* Increase font size */
+  cursor: pointer;
+  padding: .5em;
+  border-radius: .4em;
+  font-size: 1em;
 }
 
 #myBtn:hover {
-  background-color: #555; /* Add a dark-grey background on hover */
+  background-color: #555; 
 }
+
+/* ================================
+  FOOTER
+=================================*/
 
 footer {
   grid-area: footer;

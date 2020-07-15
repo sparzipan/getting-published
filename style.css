@@ -7,6 +7,7 @@ body {
   background-image: url("img/body-bg.jpg");
   background-repeat: repeat;
   background-size: auto;
+  font-size: .85em;
 }
 
 header,
@@ -77,10 +78,6 @@ blockquote,
 }
 
 /* GENERAL */
-.intro p,
-blockquote {
-  font-size: .85em;
-}
 
 .nav-heading,
 footer {
@@ -242,7 +239,7 @@ i {
 }
 
 #myBtn:hover {
-  background-color: #555; 
+  background-color: #555;
 }
 
 /* ================================
@@ -260,6 +257,11 @@ footer {
 ===============================*/
 
 @media (min-width: 768px) {
+
+  body {
+    font-size: 1em;
+  }
+  
   .wrapper {
     grid-template-columns: 1fr 2fr;
     grid-auto-rows: auto auto 300px auto;
